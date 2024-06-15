@@ -12,7 +12,7 @@ function App() {
   const [listaFavorites, setListaFavorites] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:8080/api/authors')
+    axios.get('https://autores-n9w9.onrender.com/api/authors')
     .then(response => {
       setListaFavorites(response.data);
       console.log(response);

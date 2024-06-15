@@ -11,7 +11,7 @@ const RegisterUser = () => {
     const navigate = useNavigate();
     const procesaFormRegister = (e) => {
       e.preventDefault();
-      axios.post("http://localhost:8080/api/register", { firstName, lastName, email, password, confirmPassword },
+      axios.post("https://autores-n9w9.onrender.com/api/register", { firstName, lastName, email, password, confirmPassword },
         {
           headers: {
             "Content-Type": "application/json",

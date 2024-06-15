@@ -10,7 +10,7 @@ const UpdateAuthor = ({ updateAuthor }) => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8080/api/author/${id}`)
+      .get(`https://autores-n9w9.onrender.com//api/author/${id}`)
       .then((response) => {
         setName(response.data.name);
       })
@@ -27,7 +27,7 @@ const UpdateAuthor = ({ updateAuthor }) => {
   const procesaActualizarAuthor = (e) => {
     e.preventDefault();
     axios
-      .put(`http://localhost:8080/api/update/author/${id}`, { name }, {
+      .put(`https://autores-n9w9.onrender.com/api/update/author/${id}`, { name }, {
         headers: {
           "Content-Type": "application/json",
         },

@@ -9,7 +9,7 @@ const AddAuthor = ({ addAuthor }) => {
   const procesaFormAuthor = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:8080/api/create/authors", { name })
+      .post("https://autores-n9w9.onrender.com//api/create/authors", { name })
       .then((response) => {
         console.log(response);
         addAuthor(response.data);

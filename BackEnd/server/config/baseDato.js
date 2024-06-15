@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
+require('dotenv').config();
+const URI = process.env.MONGODB_URL;
 
-mongoose.connect('mongodb://127.0.0.1:27017/autores_db')
+mongoose.connect(URI)
     .then(() => console.log('Base de datos conectada'))
     .catch(err => console.log("Error al intentar conectarse con la base de datos", err));

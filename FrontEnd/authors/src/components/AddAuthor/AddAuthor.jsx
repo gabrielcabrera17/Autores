@@ -15,7 +15,7 @@ const AddAuthor = ({ addAuthor }) => {
         addAuthor(response.data);
         setName("");
         setError("");
-        navigate("/");
+        navigate("/list");
       })
       .catch((error) => {
         console.log(error.response.data.mensaje);
@@ -25,7 +25,7 @@ const AddAuthor = ({ addAuthor }) => {
 
   const cancel = (e) => {
     e.preventDefault();
-    navigate("/");
+    navigate("/list");
   };
 
   return (

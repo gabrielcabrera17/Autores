@@ -35,7 +35,7 @@ const UpdateAuthor = ({ updateAuthor }) => {
       .then((response) => {
         updateAuthor(response.data);
         setName("");
-        navigate("/");
+        navigate("/list");
       })
       .catch((error) => {
         if (error.response && error.response.status === 404) {
@@ -48,7 +48,7 @@ const UpdateAuthor = ({ updateAuthor }) => {
 
   const cancel = (e) => {
     e.preventDefault();
-    navigate("/");
+    navigate("/list");
   };
 
   return (

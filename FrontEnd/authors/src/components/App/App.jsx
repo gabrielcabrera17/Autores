@@ -5,9 +5,12 @@ import ListAuthor from '../ListAuthor/ListAuthor';
 import { Routes, Route, Link } from 'react-router-dom';
 import AddAuthor from '../AddAuthor/AddAuthor';
 import UpdateAuthor from '../UpdateAuthor/UpdateAuthor';
+import Login from '../Login/Login';
+import RegisterUser from '../RegisterUser/RegisterUser';
 
 function App() {
   const [listaFavorites, setListaFavorites] = useState([]);
+
   useEffect(() => {
     axios.get('http://localhost:8080/api/authors')
     .then(response => {
@@ -36,11 +39,16 @@ function App() {
   }
   return (
     <div className="App">
-      <Link to="/create/author">Add an author</Link>
       <Routes>
-        <Route path="/" element={ <ListAuthor listaFavorites={listaFavorites} deleteAuthor={deleteAuthor} />} />
+        <Route path="/" element={ <Login />}/>
+      </Routes>
+      <p>No tienes una cuenta?</p>
+      <Link to="/user/register">Registrate</Link>
+      <Routes>
+        <Route path="/list" element={ <ListAuthor listaFavorites={listaFavorites} deleteAuthor={deleteAuthor} />} />
         <Route path="/create/author" element={ <AddAuthor addAuthor={addAuthor}/>} />
         <Route path="/update/author/:id" element={ <UpdateAuthor updateAuthor={updateAuthor} />} />
+        <Route path="/user/register" element={ <RegisterUser />}/>
       </Routes>
     </div>
   );
